@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<!-- Book Store Landing Page -->
+
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=880" />
+    <title>Book Store</title>
+    <link type="text/css" rel="stylesheet" href="bookStore.css" />
+    <!-- <link rel='stylesheet' media='only screen and (max-device-width: 780px)' href='mobile.css' /> -->
+    <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+    
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+   <!-- Scripts to Interact with API Client (From JavaScript SDK) -->
+    <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/hmac.js"></script>
+    <script type="text/javascript" src="lib/CryptoJS/components/enc-base64.js"></script>
+    <script type="text/javascript" src="lib/url-template/url-template.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/sigV4Client.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/apiGatewayClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
+    <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
+    <script type="text/javascript" src="apigClient.js"></script>
+    <script type="text/javascript" src="bookStoreAPI.js"></script>
+
+  </head>
+
+<body>
+
+  <div id="headerContainer"></div>
+  <div id="headerOverlay"> </div>
+  <div id="footerContainer"></div>
+  <div id="footerOverlay"> </div>
+  <div id="footerOverlay2"> </div>
+
+
+    <!-- Menu Bar (Navigation)  -->
+      <div class="nav">
+      <ul id="menu" sytle="z-index: 1;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://people.accenture.com/experience.aspx?accountname=matthew.benavente">Matt Benavente's People Page</a></li>
+      </ul> 
+    </div>
+    
+    <img id="bookIcon" src="bookIcon.png" alt="Book Icon">
+    
+    <div id="welcomeMessage">
+      <b>Welcome to Matt's Book Store :)</b>
+   </div>
+
+   <!DOCTYPE html>
+<html>
+<head>
+<title>Search Box Example 1</title>
+<meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+<!-- CSS styles for standard search box -->
+
+
+	<!-- HTML for SEARCH BAR 
+	<div id="tfheader">
+		<form id="form" method="get" action="http://www.google.com">
+		        <input type="text" class="tftextinput" name="q" size="21" maxlength="120"><input type="submit" value="search" class="tfbutton">
+		</form>
+	<div class="tfclear"></div>
+	</div>  -->
+
+    <!-- HTML for SEARCH BAR -->
+	
+    <div id="form"><form>
+        <ul class="form-style-1">
+             <li><label>Book Id <span class="required"></span></label><input type="text" name="bookid" class="field-divided" placeholder="bookid" /></li>
+             <li>
+                <input type="submit" value="Submit" />
+            </li>
+        </ul>
+	</div></form>
+
+    <div id="results" class="form-style-1">
+      <b>Results</b>
+      <ul class="listA"> 
+        <li>Authentic Italiaiago Cheese</li>
+        <li>Fresh Basil Scented Autea Salt and Extra Virgin Olive Oil</li>
+        <li>Olive Oil Poached Art Farms Sheep’s Milk Feta</li>
+        <li>Brazilian Sweet Coconut usted Baby Cucumbers</li>
+      </ul>
+  </div>
+  
+
+    </div>
+
+
+<script>
+  
+ /* console.log("scriptCHeckesdsds")
+  //Declare footer variable to be used in function
+  var footer = document.getElementById("footer");
+
+  var urlVariable = location.href;
+  if ((urlVariable.indexOf("home.html") > -1) == true)
+    {
+      console.log("Home Page");
+
+      
+$('#noBack').delay(6500).fadeOut(3000);
+$('#withBack2').hide().delay(10000).fadeIn(4000);
+$('#noBack2').hide().delay(10000).fadeIn(4000);
+$('#withBack2').delay(50).fadeOut(3000); */
+
+/* Have to create reference of API Client
+ var apigClient = apigClientFactory.newClient(); */
+
+/* Create Parameters for API Client
+var params = {
+    //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
+    param0: '',
+    param1: ''
+};
+var body = {
+    //This is where you define the body of the request
+};
+var additionalParams = {
+    //If there are any unmodeled query parameters or headers that need to be sent with the request you can add them here
+    headers: {
+        param0: '',
+        param1: ''
+    },
+    queryParams: {
+        param0: '',
+        param1: ''
+    }
+};
+*/
+
+/* Create methods for API Client
+apigClient.methodName(params, body, additionalParams)
+    .then(function(result){
+        //This is where you would put a success callback
+    }).catch( function(result){
+        //This is where you would put an error callback
+    });
+
+*/ 
+
+
+</script>
+
+
+</body>
+</html>
