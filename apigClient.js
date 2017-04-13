@@ -53,7 +53,7 @@ apigClientFactory.newClient = function (config) {
 
     
     // extract endpoint and path from url
-    var invokeUrl = 'https://zpsib92ww0.execute-api.us-west-2.amazonaws.com/test';
+    var invokeUrl = 'https://ifjg2idqa4.execute-api.us-west-2.amazonaws.com/Test';
     var endpoint = /(^https?:\/\/[^\/]+)/g.exec(invokeUrl)[1];
     var pathComponent = invokeUrl.substring(endpoint.length);
 
@@ -83,21 +83,39 @@ apigClientFactory.newClient = function (config) {
     
     
     
-    apigClient.bookdetailsGet = function (params, body, additionalParams) {
+    apigClient.eventdetailsGet = function (params, body, additionalParams) {
         if(additionalParams === undefined) { additionalParams = {}; }
         
-        apiGateway.core.utils.assertParametersDefined(params, ['bookid'], ['body']);
+        apiGateway.core.utils.assertParametersDefined(params, ['EVENT_ID'], ['body']);
         
-        var bookdetailsGetRequest = {
+        var eventdetailsGetRequest = {
             verb: 'get'.toUpperCase(),
-            path: pathComponent + uritemplate('/bookdetails').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            path: pathComponent + uritemplate('/eventdetails').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: apiGateway.core.utils.parseParametersToObject(params, []),
-            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['bookid']),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['EVENT_ID']),
             body: body
         };
         
         
-        return apiGatewayClient.makeRequest(bookdetailsGetRequest, authType, additionalParams, config.apiKey);
+        return apiGatewayClient.makeRequest(eventdetailsGetRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.eventsbydayGet = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, ['EVENT_ID'], ['body']);
+        
+        var eventsbydayGetRequest = {
+            verb: 'get'.toUpperCase(),
+            path: pathComponent + uritemplate('/eventsbyday').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['EVENT_ID']),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(eventsbydayGetRequest, authType, additionalParams, config.apiKey);
     };
     
 

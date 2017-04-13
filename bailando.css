@@ -21,7 +21,7 @@ body {
       /*background-image: url("beach.jpg"); */
 }
 
-#bookIcon {
+#danceIcon {
   left: 39%; 
   /* top: 100px; */
   top: 13%; 
@@ -45,7 +45,7 @@ body {
 
 #welcomeMessage {
   line-height: 120%;
-  position: absolute; top:45%; left: 32%;
+  position: absolute; top:45%; left: 36%;
   color: #000000;
   padding: 5px 20px;
   font-size:18pt;
@@ -57,7 +57,7 @@ body {
 
 #results{
   line-height: 112%;
-  position: absolute; top: 68%; left: 32%;
+  position: absolute; top: 68%; left: 33%;
   color: #000000;
   padding: 5px 20px;
   font-size:11pt;
@@ -68,7 +68,7 @@ body {
 }
 
 #form {
-  position: absolute; top:50%; left: 34%;
+  position: absolute; top:50%; left: 30%;
   color: #000000;
   
 }

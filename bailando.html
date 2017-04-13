@@ -1,17 +1,15 @@
 <!DOCTYPE html>
-<!-- Book Store Landing Page -->
+<!-- Bailando Events Landing Page -->
 
 <html>
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=880" />
-    <title>Book Store</title>
-    <link type="text/css" rel="stylesheet" href="bookStore.css" />
-    <!-- <link rel='stylesheet' media='only screen and (max-device-width: 780px)' href='mobile.css' /> -->
+    <title>Bailando Events</title>
+    <link type="text/css" rel="stylesheet" href="bailando.css" />
     <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" />
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
     
-
    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
    <!-- Scripts to Interact with API Client (From JavaScript SDK) -->
     <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
@@ -25,18 +23,14 @@
     <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
     <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
     <script type="text/javascript" src="apigClient.js"></script>
-    <script type="text/javascript" src="bookStoreAPI.js"></script>
-
+    <script type="text/javascript" src="bailandoAPI.js"></script>
   </head>
-
 <body>
-
   <div id="headerContainer"></div>
   <div id="headerOverlay"> </div>
   <div id="footerContainer"></div>
   <div id="footerOverlay"> </div>
   <div id="footerOverlay2"> </div>
-
 
     <!-- Menu Bar (Navigation)  -->
       <div class="nav">
@@ -46,23 +40,22 @@
       </ul> 
     </div>
     
-    <img id="bookIcon" src="bookIcon.png" alt="Book Icon">
+    <img id="danceIcon" src="danceIcon.png" alt="Dance Icon">
     
     <div id="welcomeMessage">
-      <b>Welcome to Matt's Book Store :)</b>
+      <b>¡Bailando Events!</b>
    </div>
 
    <!DOCTYPE html>
 <html>
 <head>
+
+<!-- Search Box -->
 <title>Search Box Example 1</title>
 <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-<!-- CSS styles for standard search box -->
-
-	
     <div id="form"><form>
         <ul class="form-style-1">
-             <li><label>Book Id <span class="required"></span></label><input type="text" name="bookid" class="field-divided" placeholder="bookid" /></li>
+             <li><label>Day of Week <span class="required"></span></label><input type="text" name="EVENT_ID" class="field-divided" placeholder="EVENT_ID" /></li>
              <li>
                 <input type="submit" value="Submit" />
             </li>
@@ -72,55 +65,12 @@
     <div id="results" class="form-style-1">
       <b>Results</b>
       <ul class="listA"> 
-        <li>Your book's information</li>
+        <li>Event information</li>
         <li>will populate here.</li>
-        <li>Feel free to add new books</li>
-        <li>and expand our library!</li>
+        <li>Feel free to add new events</li>
+        <li>and expand our the list!</li>
       </ul>
-  </div>
-  
-
     </div>
-
-
-<script>
-/* Have to create reference of API Client
- var apigClient = apigClientFactory.newClient(); */
-
-/* Create Parameters for API Client
-var params = {
-    //This is where any header, path, or querystring request params go. The key is the parameter named as defined in the API
-    param0: '',
-    param1: ''
-};
-var body = {
-    //This is where you define the body of the request
-};
-var additionalParams = {
-    //If there are any unmodeled query parameters or headers that need to be sent with the request you can add them here
-    headers: {
-        param0: '',
-        param1: ''
-    },
-    queryParams: {
-        param0: '',
-        param1: ''
-    }
-};
-*/
-
-/* Create methods for API Client
-apigClient.methodName(params, body, additionalParams)
-    .then(function(result){
-        //This is where you would put a success callback
-    }).catch( function(result){
-        //This is where you would put an error callback
-    });
-
-*/ 
-
-</script>
-
-
+</div>
 </body>
 </html>
