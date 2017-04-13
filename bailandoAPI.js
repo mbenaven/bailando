@@ -1,3 +1,10 @@
+/*  
+    This is the JavaScript that allows the webpage to act as the API Client. 
+    It gets the data from the search bar and sends it to the API Gateway, which will 
+    then trigger the Lambda Function (EventsByID.js) to query the DynamoDB table for
+    the record with the value provided in the search bar.
+*/
+
 var dataResult;
 $(document).ready(function() {
 
@@ -15,12 +22,10 @@ $(document).ready(function() {
         };
 
         var body = {
-            //TBD
         };
         
         var additionalParams = {
              headers: {
-
              },
              queryParams: {
                  'EVENT_ID' : $('input[name=EVENT_ID]').val()
