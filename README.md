@@ -1,7 +1,7 @@
 # Bailando - Latin Dance Event Application
-Project URL: http://bailando.com.s3-website-us-west-2.amazonaws.com/
-Code URL: https://innersource.accenture.com/projects/SERMPB/repos/store-api/
-Developer: Matt Benavente
+    1. Live URL: http://bailando.com.s3-website-us-west-2.amazonaws.com/
+    2. Inner Source: https://innersource.accenture.com/projects/SERMPB/repos/store-api/
+    3. Developer: Matt Benavente
 
 # High Level Project Description
 Latin Dance Event Application - Using Amazon's "Serverless" Architecture (Node,js, DynamoDB, AWS Lambda, S3, API Gateway)

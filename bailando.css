@@ -19,41 +19,52 @@ body {
 }
 
 #danceIcon {
-  left: 39%; 
-  /* top: 100px; */
-  top: 13%; 
-  width: 200px;
-  height: 200px; 
-  position: absolute; 
-  opacity: 1;
-  max-width: 100%;
+    left: 0px;
+    /* top: 100px; */
+    bottom: 61px;
+    height: 450px;
+    position: absolute;
+    opacity: 1;
+    max-width: 100%;
+}
+
+#bailandoEventsImage {
+    position: absolute;
+    bottom: 82px;
+    left: 340px;
+    width: 450px;
+    opacity: 1;
 }
 
 #welcomeMessage {
   line-height: 120%;
-  position: absolute; top:45%; left: 36%;
+  position: absolute; top:90px; left:45%;
   color: #000000;
   padding: 5px 20px;
-  font-size:18pt;
+  font-size:23pt;
   margin-right: 0%;
   opacity: 1;
   min-width: 1200px;
 }
 
 #results{
-  line-height: 112%;
-  position: absolute; top: 68%; left: 33%;
-  color: #000000;
-  padding: 5px 20px;
-  font-size:11pt;
-  margin-right: 20%;
-  opacity: 1;
-  min-width: 880px;
+    line-height: 112%;
+    position: absolute;
+    top: 200px;
+    left: 45%;
+    color: #000000;
+    padding: 5px 20px;
+    font-size: 11pt;
+    margin-right: 20%;
+    opacity: 1;
+    min-width: 880px;
 }
 
 #form {
-  position: absolute; top:50%; left: 30%;
-  color: #000000;
+    position: absolute;
+    top: 65px;
+    right: .5%;
+    color: #000000;
 }
 
 /*Header*/
