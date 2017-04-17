@@ -101,21 +101,93 @@ apigClientFactory.newClient = function (config) {
     };
     
     
+    apigClient.eventdetailsOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var eventdetailsOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/eventdetails').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(eventdetailsOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
     apigClient.eventsbydayGet = function (params, body, additionalParams) {
         if(additionalParams === undefined) { additionalParams = {}; }
         
-        apiGateway.core.utils.assertParametersDefined(params, ['EVENT_ID'], ['body']);
+        apiGateway.core.utils.assertParametersDefined(params, ['DAY_OF_WEEK'], ['body']);
         
         var eventsbydayGetRequest = {
             verb: 'get'.toUpperCase(),
             path: pathComponent + uritemplate('/eventsbyday').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
             headers: apiGateway.core.utils.parseParametersToObject(params, []),
-            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['EVENT_ID']),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['DAY_OF_WEEK']),
             body: body
         };
         
         
         return apiGatewayClient.makeRequest(eventsbydayGetRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.eventsbydayOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var eventsbydayOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/eventsbyday').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(eventsbydayOptionsRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.rsvpPost = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, ['emailQS', 'eventidQS'], ['body']);
+        
+        var rsvpPostRequest = {
+            verb: 'post'.toUpperCase(),
+            path: pathComponent + uritemplate('/rsvp').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, ['emailQS', 'eventidQS']),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(rsvpPostRequest, authType, additionalParams, config.apiKey);
+    };
+    
+    
+    apigClient.rsvpOptions = function (params, body, additionalParams) {
+        if(additionalParams === undefined) { additionalParams = {}; }
+        
+        apiGateway.core.utils.assertParametersDefined(params, [], ['body']);
+        
+        var rsvpOptionsRequest = {
+            verb: 'options'.toUpperCase(),
+            path: pathComponent + uritemplate('/rsvp').expand(apiGateway.core.utils.parseParametersToObject(params, [])),
+            headers: apiGateway.core.utils.parseParametersToObject(params, []),
+            queryParams: apiGateway.core.utils.parseParametersToObject(params, []),
+            body: body
+        };
+        
+        
+        return apiGatewayClient.makeRequest(rsvpOptionsRequest, authType, additionalParams, config.apiKey);
     };
     
 

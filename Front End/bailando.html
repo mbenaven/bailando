@@ -7,11 +7,11 @@
     <meta name="viewport" content="width=880" />
     <title>¡Bailando Events!</title>
     <link type="text/css" rel="stylesheet" href="bailando.css" />
-    <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" /> <!-- Mini icon displayed on tab. -->
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" />
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" /> <!-- Mini icon displayed on tab. 
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" /> -->
     
     <!-- Scripts to Interact with API Client (From JavaScript SDK) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
     <script type="text/javascript" src="lib/CryptoJS/rollups/hmac-sha256.js"></script>
     <script type="text/javascript" src="lib/CryptoJS/rollups/sha256.js"></script>
@@ -23,7 +23,8 @@
     <script type="text/javascript" src="lib/apiGatewayCore/simpleHttpClient.js"></script>
     <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
     <script type="text/javascript" src="apigClient.js"></script>
-    <script type="text/javascript" src="bailandoAPI.js"></script>
+    <script type="text/javascript" src="clientRequests/eventbyidGET.js"></script>
+    <!-- <script type="text/javascript" src="addEventClient.js"></script> -->
   </head>
 
 <body>
@@ -43,10 +44,10 @@
     </div>
     
     <!-- Main Image on Landing Page -->
-    <img id="danceIcon" src="danceIcon.png" alt="Dance Icon">
+    <img id="danceIcon" src="images/danceIcon.png" alt="Dance Icon">
     
     <!-- Bailando Events Image on Landing Page -->
-    <img id="bailandoEventsImage" src="BailandoEvents.png" alt="Bailando Events Image">
+    <img id="bailandoEventsImage" src="images/BailandoEvents.png" alt="Bailando Events Image">
 
     <!-- Application Name Text 
     <div id="welcomeMessage">
@@ -54,25 +55,28 @@
    </div> -->
 
     <!-- Search Box -->
-    <title>Search Box Example 1</title>
+    <title>Search Box</title>
     <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-        <div id="form"><form>
+        <div id="searchForm"><form name="searchForm1">
             <ul class="form-style-1">
-                <label> <!--Preceeding text can go here --> <span class="required"></span></label><input type="text" name="EVENT_ID" class="field-divided" placeholder="Enter your Event ID" />
+                <label> <span class="required"></span></label><input type="text" name="EVENT_ID" id=EVENT_ID_sub class="field-divided" placeholder="Enter your Event ID" />
                 <input type="submit" value="Search" />
             </ul>
-	    </div></form>
+	    </form></div> 
+
+    <!-- RSVP Form 
+    <title>RSVP Form</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <div id="rsvpForm"><form name="rsvpForm1">
+            <ul class="form-style-1">
+                <label> <!--Preceeding text can go here  <span class="required"></span></label><input type="text" name="EMAIL_sub" id="EMAIL_sub" class="field-divided" placeholder="Email" />
+                <label> <span class="required"></span></label><input type="text" name="EVENT_ID_sub" id=EVENT_ID_sub class="field-divided" placeholder="Event ID" />
+                <input type="submit" value="RSVP" name="rsvpSubmit" id="submitID" />
+            </ul>
+	      </form></div> -->
 
     <!-- Search Results -->
-    <div id="results" class="form-style-1">
-      <b>Results</b>
-      <ul class="listA"> 
-        <li>Event information</li>
-        <li>will populate here.</li>
-        <li>Feel free to add new events</li>
-        <li>and expand our the list!</li>
-      </ul>
-    </div>
+    <div id="results" class="form-style-1"></div>
 
 </body>
 </html>

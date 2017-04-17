@@ -60,9 +60,16 @@ body {
     min-width: 880px;
 }
 
-#form {
+#searchForm {
     position: absolute;
     top: 65px;
+    right: .5%;
+    color: #000000;
+}
+
+#rsvpForm {
+    position: absolute;
+    top: 95px;
     right: .5%;
     color: #000000;
 }
@@ -73,7 +80,7 @@ body {
   height: 70px;
   position: absolute; top:0px; left: 0px;
   z-index: 6;
-  background-image: url("igniteGlass.jpg");
+  background-image: url("images/igniteGlass.jpg");
   opacity: .8;
 } 
 #headerOverlay{
@@ -118,7 +125,7 @@ body {
   height: 70px;
   position: absolute; bottom:0px; left: 0px;
   z-index: 6;
-  background-image: url("igniteGlass.jpg");
+  background-image: url("images/igniteGlass.jpg");
   opacity: .8;
 } 
 #footerOverlay{
