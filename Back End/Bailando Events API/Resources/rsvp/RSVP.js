@@ -17,25 +17,36 @@ var ses = new AWS.SES({
 var docClient = new AWS.DynamoDB.DocumentClient();
 
 exports.handler = (event, context, callback) => {
-    console.log("Email Param :"+event.params.querystring.EMAIL);
-    console.log("Event Param :"+event.params.querystring.EVENT_ID);
+    console.log("Email Param :"+event.params.querystring.emailQS);
+    console.log("Event Param :"+event.params.querystring.eventidQS);
+
+    var emailString = event.params.querystring.emailQS;
+
+    function ValidateEmail(x){  
+ 	    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x)){ 
+  	        return (true) 
+        } else {return (false)}
+    } 
+  
+    if(ValidateEmail(emailString) === true){
+		console.log("Email is valid: " + emailString);
     
-    // These parameters (params) are used for to add the record to the DynamoDB RSVP table ( dyanmoDB.putItem() )
-    var params = {
-        Item: {
-            "EMAIL": {
-                S: event.params.querystring.EMAIL
+        // These parameters (params) are used for to add the record to the DynamoDB RSVP table ( dyanmoDB.putItem() )
+        var params = {
+            Item: {
+                "EMAIL": {
+                    S: event.params.querystring.emailQS
+                }, 
+                "EVENT_ID": {
+                    N: event.params.querystring.eventidQS
+                }
             }, 
-            "EVENT_ID": {
-                N: event.params.querystring.EVENT_ID
-            }
-        }, 
-        ReturnConsumedCapacity: "TOTAL", 
-        TableName: "RSVP"
-    };
+            ReturnConsumedCapacity: "TOTAL", 
+            TableName: "RSVP"
+        };
     
-    //These parameters (eParams) are for the confirmation email being sent to the person who is RSVPing
-    var eParams = {
+        //These parameters (eParams) are for the confirmation email being sent to the person who is RSVPing
+        var eParams = {
                 Destination: {
                     ToAddresses: [event.params.querystring.emailQS]
                 },
@@ -65,15 +76,20 @@ exports.handler = (event, context, callback) => {
                 }
             });
 
-    // Adds an item to DyanmoDB. The table name and field values are specified in the above params.
-    dynamodb.putItem(params, function(err,data) {
-        if (err){
-            console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
-        } else {
-            //console.log("putItem succeeded:", JSON.stringify(data, null, 2));
-            callback(null, JSON.parse( JSON.stringify(data, null, 2)));
-        }
-    });
+        // Adds an item to DyanmoDB. The table name and field values are specified in the above params.
+        dynamodb.putItem(params, function(err,data) {
+            if (err){
+                console.error("Unable to read item. Error JSON:", JSON.stringify(err, null, 2));
+            } else {
+                //console.log("putItem succeeded:", JSON.stringify(data, null, 2));
+                callback(null, JSON.parse( JSON.stringify(data, null, 2)));
+            }
+        });
+        
+    }
+    else {
+	    console.log("!!!INVALID EMAIL!!!: " + emailString);
+    }
 };
 
 

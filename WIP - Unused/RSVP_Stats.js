@@ -1,5 +1,6 @@
 'use strict';
 var AWS = require('aws-sdk');
+
 var docClient = new AWS.DynamoDB.DocumentClient();
 var table = "EVENTS";
 

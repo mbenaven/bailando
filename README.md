@@ -13,8 +13,11 @@ Uses Amazon's "Serverless" Architecture (Node,js, DynamoDB, AWS Lambda, S3, API 
 # Features
     1. Search events in DynamoDB table by their primary key, using the web application to invoke a lambda function.
     2. RSVP to events though POST API calls **Web application client integration in scope of next release**
+        a. Invalid emails submitted will not be added to the RSVP table
+        b. It will write to the CloudWatch Log that the RSVP email is Invalid
     3. Attendees who RSVP will recieve a confirmation email.
     4. Search events in DynamoDB by their global secondary index (GSI) value, Day of Week, through GET API Calls **Web application client integration in scope of next release**
+    5. When a new record is added to the EVENTS table, the developer will recieve an email
 
 # Directory Structure
     1. Lambda Function JavaScript files are stored in the Back End folder, under their API and resource and method names corresponding to how they are invoked from the API Gateway. (ie. Back End\Bailando Events API\Resources\rsvp\rsvp.js)
