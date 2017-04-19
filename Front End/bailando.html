@@ -7,9 +7,136 @@
     <meta name="viewport" content="width=880" />
     <title>¡Bailando Events!</title>
     <link type="text/css" rel="stylesheet" href="bailando.css" />
-    <!-- <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" /> <!-- Mini icon displayed on tab. 
+    <!-- <link rel="shortcut icon" type="image/x-icon" href="proposalIcon.ico" />  Mini icon displayed on tab. 
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Josefin+Sans" /> -->
     
+    <!-- Bootstrap: Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <!-- Boostrap: Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+ </head>
+
+<body>
+    <!-- Header and Footer  
+    <div id="headerContainer"></div>
+    <div id="headerOverlay"></div>
+    <div id="footerContainer"></div>
+    <div id="footerOverlay"></div>
+    <div id="footerOverlay2"></div> -->
+
+    <!-- Menu Bar (Navigation)  
+    <div class="nav">
+      <ul id="menu" sytle="z-index: 1;">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="https://people.accenture.com/experience.aspx?accountname=matthew.benavente">Matt Benavente's People Page</a></li>
+      </ul> 
+    </div> -->
+    <header class="navbar-inverse">
+      <div class="container">
+        <nav role="navigation">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Bailando Events</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="#">Home <span class="sr-only">(current)</span></a></li>
+                <!-- <li><a href="#"></a></li> -->
+                <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About The Developer <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                    <li><a href="https://people.accenture.com/experience.aspx?accountname=matthew.benavente" target="_blank">People Page</a></li>
+                    <li><a href="https://www.linkedin.com/in/matthewbenavente/" target="_blank">LinkedIn</a></li>
+                    <li><a href="https://innersource.accenture.com/projects/SERMPB/repos/store-api/browse" target="_blank">Inner Source </a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a></a></li>
+                    <li role="separator" class="divider"></li>
+                    <li><a>Matt Benavente    </a></li>
+                </ul>
+                </li>
+            </ul>
+            <form class="navbar-form navbar-right" name="searchForm1">
+                <div class="form-group">
+                <input type="text" name="EVENT_ID" class="form-control" placeholder="Enter the event ID">
+                </div>
+                <button type="submit" class="btn btn-default">Search</button>
+            </form>
+            </div>
+            </nav><!-- /.navbar-collapse -->
+        </div><!-- /.container-fluid -->
+    </header>
+    <div class="jumbotron-narrow">
+        <p></p>
+    </div>
+    
+    
+    <!-- Main Image on Landing Page -->
+    <img id="danceIcon" src="images/danceIcon.png" alt="Dance Icon">
+    
+    <!-- Bailando Events Image on Landing Page -->
+    <img id="bailandoEventsImage" src="images/BailandoEvents.png" alt="Bailando Events Image">
+
+     <!-- Search Results -->
+    <div id="resultsDiv" class="form-style-1"> <br> </div> 
+
+
+    <!-- Application Name Text 
+    <div id="welcomeMessage">
+      <b>¡Bailando Events!</b>
+   </div> -->
+
+    <!-- Search Box  
+    <title>Search Box</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <div id="searchForm"><form name="searchForm1">
+            <ul class="form-style-1">
+                <label> <span class="required"></span></label><input type="text" name="EVENT_ID" id=EVENT_ID_sub class="field-divided" placeholder="Enter your Event ID" />
+                <input type="submit" value="Search" />
+            </ul>
+	    </form></div> -->
+
+    <!-- Search By Day Box 
+    <title>Search Box</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <div id="searchForm"><form name="searchForm1">
+            <ul class="form-style-1">
+                <label> <span class="required"></span></label><input type="text" name="DOW_sub" id=DOW_sub class="field-divided" placeholder="Enter a day of the week!" />
+                <input type="submit" value="Search" />
+            </ul>
+	    </form></div> -->
+    
+    <!-- RSVP Form
+    <title>RSVP Form</title>
+    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
+        <div id="rsvpForm"><form name="rsvpForm1">
+            <ul class="form-style-1">
+                <label> <span class="required"></span></label><input type="text" name="EMAIL_sub" id="EMAIL_sub" class="field-divided" placeholder="Email" />
+                <label> <span class="required"></span></label><input type="text" name="EVENT_ID_sub" id=EVENT_ID_sub class="field-divided" placeholder="Event ID" />
+                <input type="submit" value="RSVP" name="rsvpSubmit" id="submitID" />
+            </ul>
+	      </form></div> -->
+
+    <!-- New Search Results To Be Added
+    <div id="resultsDiv" class="form-style-1">
+        <ul class="list-group">
+            <li class="list-group-item">Event information will populate here! </li>
+            <li class="list-group-item">Event ID:</li>
+            <li class="list-group-item">Event Name:</li>
+            <li class="list-group-item">Venue:</li>
+            <li class="list-group-item">Day of Week:</li> 
+        </ul>
+    </div> -->
+
+   
     <!-- Scripts to Interact with API Client (From JavaScript SDK) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.0/jquery.min.js"></script>
     <script type="text/javascript" src="lib/axios/dist/axios.standalone.js"></script>
@@ -24,59 +151,9 @@
     <script type="text/javascript" src="lib/apiGatewayCore/utils.js"></script>
     <script type="text/javascript" src="apigClient.js"></script>
     <script type="text/javascript" src="clientRequests/eventbyidGET.js"></script>
-    <!-- <script type="text/javascript" src="addEventClient.js"></script> -->
-  </head>
-
-<body>
-    <!-- Header and Footer  -->
-    <div id="headerContainer"></div>
-    <div id="headerOverlay"></div>
-    <div id="footerContainer"></div>
-    <div id="footerOverlay"></div>
-    <div id="footerOverlay2"></div>
-
-    <!-- Menu Bar (Navigation)  -->
-    <div class="nav">
-      <ul id="menu" sytle="z-index: 1;">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="https://people.accenture.com/experience.aspx?accountname=matthew.benavente">Matt Benavente's People Page</a></li>
-      </ul> 
-    </div>
-    
-    <!-- Main Image on Landing Page -->
-    <img id="danceIcon" src="images/danceIcon.png" alt="Dance Icon">
-    
-    <!-- Bailando Events Image on Landing Page -->
-    <img id="bailandoEventsImage" src="images/BailandoEvents.png" alt="Bailando Events Image">
-
-    <!-- Application Name Text 
-    <div id="welcomeMessage">
-      <b>¡Bailando Events!</b>
-   </div> -->
-
-    <!-- Search Box -->
-    <title>Search Box</title>
-    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-        <div id="searchForm"><form name="searchForm1">
-            <ul class="form-style-1">
-                <label> <span class="required"></span></label><input type="text" name="EVENT_ID" id=EVENT_ID_sub class="field-divided" placeholder="Enter your Event ID" />
-                <input type="submit" value="Search" />
-            </ul>
-	    </form></div> 
-
-    <!-- RSVP Form 
-    <title>RSVP Form</title>
-    <meta name="ROBOTS" content="NOINDEX, NOFOLLOW" />
-        <div id="rsvpForm"><form name="rsvpForm1">
-            <ul class="form-style-1">
-                <label> <!--Preceeding text can go here  <span class="required"></span></label><input type="text" name="EMAIL_sub" id="EMAIL_sub" class="field-divided" placeholder="Email" />
-                <label> <span class="required"></span></label><input type="text" name="EVENT_ID_sub" id=EVENT_ID_sub class="field-divided" placeholder="Event ID" />
-                <input type="submit" value="RSVP" name="rsvpSubmit" id="submitID" />
-            </ul>
-	      </form></div> -->
-
-    <!-- Search Results -->
-    <div id="results" class="form-style-1"></div>
-
+    <script type="text/javascript" src="clientRequests/rsvpPOST.js"></script>
+    <script type="text/javascript" src="clientRequests/eventbydayGET.js"></script>
+    <!-- Bootstrap: Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -36,16 +36,32 @@ $(document).ready(function() {
 
         apigClient.eventdetailsGet(params, body, additionalParams) 
             .then(function(result){
-                console.log(result.data);
                 dataResult = result.data;
-                var resultStr = 'Event ID: <b>'+result.data.Item.EVENT_ID+'</b><br>'+'Event Name: <b>'+result.data.Item.EVENT_NAME+'</b><br>'+'Venue Name: <b>'+result.data.Item.VENUE_NAME+'</b><br>';
+                
+                var resultStr ='Event ID: <b>'+result.data.Item.EVENT_ID+'</b><br>'+'Event Name: <b>'+result.data.Item.EVENT_NAME+'</b><br>'+'Venue Name: <b>'+result.data.Item.VENUE_NAME+'</b><br>';
                 console.log(resultStr);
-                $('#results').html(resultStr); //This sets the Results HTML contents to contain the results from the GET
+
+                $('#resultsDiv').html(resultStr); //This sets the Results HTML contents to contain the results from the GET
             }).catch( function(result) {
                 console.log('error');
             });
         
+        
         return false;
     });
 });
+
+
+
+/* Testing: Lambda Function - Test Event
+{
+	"body-json":{},
+	"params": {
+		"path": {},
+		"querystring": {
+			"EVENT_ID": "1"
+		}
+	}
+}	
+*/
 

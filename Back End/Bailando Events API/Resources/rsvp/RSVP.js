@@ -22,6 +22,8 @@ exports.handler = (event, context, callback) => {
 
     var emailString = event.params.querystring.emailQS;
 
+    //  This function uses a regular expression to test the input and return weather 
+    //  the input (email) is in the following format: alphanumeric + @ + alphanumeric + . + alphanumeric
     function ValidateEmail(x){  
  	    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(x)){ 
   	        return (true) 
@@ -31,7 +33,7 @@ exports.handler = (event, context, callback) => {
     if(ValidateEmail(emailString) === true){
 		console.log("Email is valid: " + emailString);
     
-        // These parameters (params) are used for to add the record to the DynamoDB RSVP table ( dyanmoDB.putItem() )
+        //  These parameters (params) are used for to add the record to the DynamoDB RSVP table ( dyanmoDB.putItem() )
         var params = {
             Item: {
                 "EMAIL": {
