@@ -10,8 +10,8 @@
  *  Description: This Lambda function sends an email containing the item information when an item is inserted 
  *  into the EVENTS dynamo DB Table. It is triggered by the event stream associated with the EVENTS DynamoDB table. 
  *  
- *  Note: All DynamoDB tables have event streams, this table just happens to also be named EVENTS
- *  Stream events are created whensomething is Modified, Inserted etc. in the table. 
+ *  Note: All DynamoDB tables have event streams, this table just happens to also be named EVENTS.
+ *  Stream events are created when something is Modified, Inserted etc. in the table. 
  *  
  *  When an item is Inserted into the EVENTS table (for dancing EVENTS)
  *  a event of eventName = 'INSERT' is added to the event stream.  

@@ -4,8 +4,10 @@
  *  API: Bailando Events 
  *  Resource/Method: /eventsbyday/GET
  * 
- *  Description: It takes the input passed by the POST request and adds it as a new record to the dynamoDB RSVP table.  
- *  It also sends an email using SES (Simple Email Service) to the Email passed by the POST request. 
+ *  Description: This is the AWS Lambda function used to act as the DB Client to query to the DynamoDB table 
+ *  for the value entered in the search bar. (On the bottom, commented out is the test event)
+ *      1. It recieves the the field value from the client entry (search)
+ *      2. It queries DynamoDB for the record with that Global Secondary Index value
  *
  */
 
