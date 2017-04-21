@@ -1,0 +1,56 @@
+service: events 
+
+provider:
+  name: aws
+  runtime: nodejs6.10
+  region: us-west-2
+  iamRoleStatements:
+    - Effect: Allow
+      Action:
+        - dynamodb:Query
+        - dynamodb:PutItem
+        - dynamodb:UpdateItem
+        - dynamodb:Scan
+        - dynamodb:GetItem
+        - dynamodb:DeleteItem
+        - dynamodb:DescribeTable
+      Resource: "arn:aws:dynamodb:${self:provider.region}:*:*"
+
+functions:
+  addEvent:
+    handler: events/create.create
+    events:
+      - http:
+          path: events
+          method: post
+          cors: true
+  hello:
+    handler: handler.hello
+    environment: 
+      #foo: bar
+    events:
+      - http:
+          path: eventdetails
+          method: get
+          cors: true
+          request:
+            template:
+              application/json: '{ "body": "$input.json(''$'')" }'
+
+resources:
+  Resources:
+    eventsTable:
+      Type: AWS::DynamoDB::Table
+      Properties:
+        TableName: LD_EVENTS
+        AttributeDefinitions:
+          - AttributeName: EVENT_ID
+            AttributeType: S
+        KeySchema:
+          - AttributeName: EVENT_ID
+            KeyType: HASH
+        ProvisionedThroughput:
+          ReadCapacityUnits: 5
+          WriteCapacityUnits: 5
+
+        
