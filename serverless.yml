@@ -17,26 +17,28 @@ provider:
       Resource: "arn:aws:dynamodb:${self:provider.region}:*:*"
 
 functions:
-  addEvent:
+  create:
     handler: events/create.create
     events:
       - http:
           path: events
           method: post
           cors: true
-  hello:
-    handler: handler.hello
-    environment: 
-      #foo: bar
+  list:
+    handler: events/list.list
     events:
       - http:
-          path: eventdetails
+          path: events
           method: get
           cors: true
-          request:
-            template:
-              application/json: '{ "body": "$input.json(''$'')" }'
-
+  search:
+    handler: events/search.search
+    events:
+      - http:
+          path: events/{id}
+          method: get
+          cors: true
+          
 resources:
   Resources:
     eventsTable:
