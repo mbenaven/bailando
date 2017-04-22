@@ -6,9 +6,9 @@ const dynamoDb = new AWS.DynamoDB.DocumentClient();
 
 module.exports.create = (event, context, callback) => {
     const timestamp = new Date().getTime();
-    const data = JSON.parse(event.body);
+    const data = JSON.parse(event.body); //Extract text provided in request event body of JSON format
 
-    if(typeof data.text !== 'string'){
+    if(typeof data.DAY_OF_WEEK !== 'string'){
         console.error("Validation Failed, not string")
     }
 
@@ -23,7 +23,7 @@ module.exports.create = (event, context, callback) => {
         }
     }
 
-    dynamoDb.put(params, (error, result) => {
+    dynamoDb.put(params, (error, results) => {
         if(error){
             console.error(eror);
             callback(new Error('Could not create the new event.'));

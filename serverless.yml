@@ -38,6 +38,20 @@ functions:
           path: events/{id}
           method: get
           cors: true
+  update:
+    handler: events/update.update
+    events:
+      - http:
+          path: events/{id}
+          method: put
+          cors: true
+  delete:
+    handler: events/delete.delete
+    events:
+      - http:
+          path: events/{id}
+          method: delete
+          cors: true
           
 resources:
   Resources:
