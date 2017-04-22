@@ -16,7 +16,7 @@
 const AWS = require('aws-sdk');
 const db = new AWS.DynamoDB.DocumentClient();
 
-module.exports.search = (event, context, callback) => {
+module.exports.byid = (event, context, callback) => {
     const params = {
         TableName: "LD_EVENTS",
         Key:{

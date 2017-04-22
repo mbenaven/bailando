@@ -32,7 +32,7 @@ functions:
           method: get
           cors: true
   search:
-    handler: events/search.search
+    handler: events/search.byid
     events:
       - http:
           path: events/{id}
@@ -52,7 +52,7 @@ functions:
           path: events/{id}
           method: delete
           cors: true
-          
+
 resources:
   Resources:
     eventsTable:
@@ -62,11 +62,24 @@ resources:
         AttributeDefinitions:
           - AttributeName: EVENT_ID
             AttributeType: S
+          - AttributeName: DAY_OF_WEEK
+            AttributeType: S
         KeySchema:
           - AttributeName: EVENT_ID
             KeyType: HASH
         ProvisionedThroughput:
           ReadCapacityUnits: 5
           WriteCapacityUnits: 5
+        GlobalSecondaryIndexes:
+          - IndexName: DAY_OF_WEEK-index
+            KeySchema:
+              - AttributeName: DAY_OF_WEEK
+                KeyType: HASH
+            Projection:
+              ProjectionType: ALL
+            ProvisionedThroughput:
+              ReadCapacityUnits: 5
+              WriteCapacityUnits: 5
+        
 
         
