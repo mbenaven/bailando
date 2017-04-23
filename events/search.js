@@ -23,20 +23,40 @@ module.exports.byid = (event, context, callback) => {
             "EVENT_ID": event.pathParameters.id
         }
     };
-    
     db.get(params, (error, result) => {
         if (error){
             console.error(error);
             callback(new Error('Couldn\'t fetch the event.'));
             return;
         } 
-
         const response = {
             statusCode: 200,
             body: JSON.stringify(result.Item)
         };
         callback(null, response);
     });
+};
+
+
+module.exports.byday = (event, context, callback) => {
+    var params = {
+        ExpressionAttributeValues: {
+            ":v1": {
+            S: event.pathParameters.day
+            }
+        }, 
+        KeyConditionExpression: "DAY_OF_WEEK = :v1", 
+        TableName: "LD_EVENTS",
+        IndexName: "DAY_OF_WEEK-index"
+    };
+    console.log("Params: " + params);
+    db.query(params, (error, result) => {
+        if (error) console.log(error, error.stack); 
+        else{
+            console.log("GetItem succeeded:", JSON.stringify(result, null, 2));
+            callback(null, JSON.parse( JSON.stringify(result, null, 2)));
+        }
+    }); 
 };
 
 
