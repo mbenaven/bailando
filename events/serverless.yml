@@ -26,49 +26,49 @@ provider:
 
 functions:
   create:
-    handler: events/create.create
+    handler: functions/create.create
     events:
       - http:
           path: events
           method: post
           cors: true
   list:
-    handler: events/list.list
+    handler: functions/list.list
     events:
       - http:
           path: events
           method: get
           cors: true
   search:
-    handler: events/search.byid
+    handler: functions/search.byid
     events:
       - http:
           path: events/{id}
           method: get
           cors: true
   searchByDay:
-    handler: events/search.byday
+    handler: functions/search.byday
     events:
       - http:
           path: events/searchbyday/{day}
           method: get
           cors: true
   update:
-    handler: events/update.update
+    handler: functions/update.update
     events:
       - http:
           path: events/{id}
           method: put
           cors: true
   delete:
-    handler: events/delete.delete
+    handler: functions/delete.delete
     events:
       - http:
           path: events/{id}
           method: delete
           cors: true
   eventSteward:
-    handler: events/eventSteward.insert
+    handler: functions/eventSteward.insert
     events:
       - stream: arn:aws:dynamodb:us-west-2:079985610213:table/LD_EVENTS/stream/2017-04-23T04:12:52.056
 
