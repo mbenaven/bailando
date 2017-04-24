@@ -46,11 +46,11 @@ functions:
           path: events/{id}
           method: get
           cors: true
-  searchByDay:
-    handler: functions/search.byday
+  searchDay:
+    handler: functions/searchDay.byday
     events:
       - http:
-          path: events/searchbyday/{day}
+          path: events/byday/{day}
           method: get
           cors: true
   update:

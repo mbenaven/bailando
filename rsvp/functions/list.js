@@ -1,13 +1,7 @@
 /*
- *  Lambda Function: EventsByID
  *  Developer: Matt Benavente
- *  API: Bailando Events 
- *  Resource/Method: /rsvp/POST
  * 
- *  Description: This is the AWS Lambda function used to act as the DB Client to query to the DynamoDB table 
- *  for the value entered in the search bar. (On the bottom, commented out is the test event)
- *      1. It recieves the the field value from the client entry (search)
- *      2. It queries DynamoDB for the record with that primary key value
+ *  Description: This function lists all the records in the table using a table scan
  * 
  */
 

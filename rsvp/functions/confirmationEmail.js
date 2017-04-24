@@ -1,21 +1,13 @@
 /*
- *  Lambda Function: EventSteward
  *  Developer: Matt Benavente
- *  API: Bailando Events 
- *  Resource/Method: N/A
- *  Trigger: DyanamoDB event stream - EVENTS table
- *  Event Source ARN: arn:aws:dynamodb:us-west-2:079985610213:table/EVENTS/stream/2017-04-14T05:23:07.869
  * 
  * 
  *  Description: This Lambda function sends an email containing the item information when an item is inserted 
- *  into the EVENTS dynamo DB Table. It is triggered by the event stream associated with the EVENTS DynamoDB table. 
+ *  into the RSVP dynamo DB Table. It is triggered by the event stream associated with the LD_RSVP  DynamoDB table. 
  *  
- *  Note: All DynamoDB tables have event streams, this table just happens to also be named EVENTS.
- *  Stream events are created when something is Modified, Inserted etc. in the table. 
- *  
- *  When an item is Inserted into the EVENTS table (for dancing EVENTS)
+ *  When an item is Inserted into the LD_RSVP table
  *  a event of eventName = 'INSERT' is added to the event stream.  
- *  This function sends an email containing the (dancing) EVENT info whenever there is an Insert 
+ *  This function sends an email containing the EVENT_ID and RSVP_ID
  * 
  */
 
@@ -71,52 +63,3 @@ module.exports.insert = (event, context, callback) => {
 };
 
 
-
-/* 
- *  Testing - Test Event - Event Stream Simulation
- *  This Event Stream simulates someone adding a record to the EVENTS dynamoDB table.
- * 
-{
-  "Records": [
-    {
-      "eventID": "7de3041dd709b024af6f29e4fa13d34c",
-      "eventName": "INSERT",
-      "eventVersion": "1.1",
-      "eventSource": "aws:dynamodb",
-      "awsRegion": "us-west-2",
-      "dynamodb": {
-        "ApproximateCreationDateTime": 1479499740,
-        "Keys": {
-          "EVENT_ID": {
-            "N": "106"
-          }
-        },
-        "NewImage": {
-          "COVER": {
-            "N": "10"
-          },
-          "RSVP_ATTENDANCE": {
-            "N": "60"
-          },
-          "ATTENDANCE": {
-            "N": "200"
-          },
-          "EVENT_ID": {
-            "N": "106"
-          },
-          "DAY_OF_WEEK": {
-            "S": "Saturday"
-          },
-          "VENUE_NAME": {
-            "S": "Las Fuentes"
-          }
-        },
-        "SequenceNumber": "13021600000000001596893679",
-        "SizeBytes": 112,
-        "StreamViewType": "NEW_IMAGE"
-      },
-      "eventSourceARN": "arn:aws:dynamodb:us-west-2:079985610213:table/EVENTS/stream/2017-04-14T05:23:07.869"
-    }
-  ]
-}
-*/
