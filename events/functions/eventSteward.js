@@ -1,19 +1,17 @@
 /*
- *  Lambda Function: EventSteward
+ *  Lambda Function: Event Steward
  *  Developer: Matt Benavente
- *  API: Bailando Events 
  *  Resource/Method: N/A
- *  Trigger: DyanamoDB event stream - EVENTS table
- *  Event Source ARN: arn:aws:dynamodb:us-west-2:079985610213:table/EVENTS/stream/2017-04-14T05:23:07.869
+ *  Trigger: DyanamoDB event stream - LD_EVENTS table
  * 
  * 
  *  Description: This Lambda function sends an email containing the item information when an item is inserted 
- *  into the EVENTS dynamo DB Table. It is triggered by the event stream associated with the EVENTS DynamoDB table. 
+ *  into the EVENTS dynamo DB Table. It is triggered by the event stream associated with the LD EVENTS DynamoDB table. 
  *  
- *  Note: All DynamoDB tables have event streams, this table just happens to also be named EVENTS.
+ *  Note: All DynamoDB tables have event streams, this table just happens to also be named LD_EVENTS.
  *  Stream events are created when something is Modified, Inserted etc. in the table. 
  *  
- *  When an item is Inserted into the EVENTS table (for dancing EVENTS)
+ *  When an item is Inserted into the LD_EVENTS table (for dancing EVENTS)
  *  a event of eventName = 'INSERT' is added to the event stream.  
  *  This function sends an email containing the (dancing) EVENT info whenever there is an Insert 
  * 

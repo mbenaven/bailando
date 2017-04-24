@@ -1,8 +1,5 @@
 /*
- *  Lambda Function: EventsByID
  *  Developer: Matt Benavente
- *  API: Bailando Events 
- *  Resource/Method: /rsvp/POST
  * 
  *  Description: This is the AWS Lambda function used to act as the DB Client to query to the DynamoDB table 
  *  for the value entered in the search bar. (On the bottom, commented out is the test event)
@@ -38,26 +35,7 @@ module.exports.byid = (event, context, callback) => {
 };
 
 
-module.exports.byday = (event, context, callback) => {
-    var params = {
-        ExpressionAttributeValues: {
-            ":v1": {
-            S: event.pathParameters.day
-            }
-        }, 
-        KeyConditionExpression: "DAY_OF_WEEK = :v1", 
-        TableName: "LD_EVENTS",
-        IndexName: "DAY_OF_WEEK-index"
-    };
-    console.log("Params: " + params);
-    db.query(params, (error, result) => {
-        if (error) console.log(error, error.stack); 
-        else{
-            console.log("GetItem succeeded:", JSON.stringify(result, null, 2));
-            callback(null, JSON.parse( JSON.stringify(result, null, 2)));
-        }
-    }); 
-};
+
 
 
 /* 
