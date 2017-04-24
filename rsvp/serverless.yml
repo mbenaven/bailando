@@ -39,8 +39,8 @@ functions:
           path: rsvp
           method: get
           cors: true
-  eventSteward:
-    handler: functions/eventSteward.insert
+  confirmationEmail:
+    handler: functions/confirmationEmail.insert
     events:
       - stream: arn:aws:dynamodb:us-west-2:079985610213:table/LD_RSVP/stream/2017-04-23T19:31:31.825
 
