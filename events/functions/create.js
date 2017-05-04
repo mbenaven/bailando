@@ -17,7 +17,7 @@ module.exports.create = (event, context, callback) => {
         Item: {
             EVENT_ID: uuid.v1(),
             DAY_OF_WEEK: data.DAY_OF_WEEK,
-            VENUE: data.VENUE,
+            VENUE: data.VENUE + ": Modified",
             LAST_UPDATED_TS: timestamp,
             CHECKED: false
         }

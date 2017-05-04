@@ -1,7 +1,6 @@
 # Bailando - Latin Dance Event Application
     1. Live URL: http://bailando.com.s3-website-us-west-2.amazonaws.com/
-    2. Inner Source: https://innersource.accenture.com/projects/SERMPB/repos/store-api/
-    3. Developer: Matt Benavente 
+    2. Developer: Matt Benavente 
 
 # High Level Application Description
 Latin dance event applicaiton, allowing users to search weekly events and rsvp to them.
